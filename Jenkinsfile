@@ -1,18 +1,16 @@
-#!groovy
-// @Library('depa-libraries') _
+#!/usr/bin/env groovy
 
-node {
-  stage('Get data') {
-  //  println getModifiedFiles()
-  //    print("it works")
+
+// returns a list of changed files
+@NonCPS
+def call () {
     changedFiles = []
-    for (changeLogSet in currentBuild.changeSets) {
+    for (changeLogSet in currentBuild.changeSets) { 
         for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
             for (file in entry.getAffectedFiles()) {
-                // changedFiles.add(file.getPath())
-                println(file.getPath())
+                changedFiles.add(file.getPath()) // add changed file to list
             }
         }
     }
-  }
+    println changedFiles
 }
