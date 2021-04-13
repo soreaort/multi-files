@@ -3,5 +3,4 @@
 
 stage('Get data') {
   println getModifiedFiles()
-  println(currentBuild.changeSets) // should print an empty set
 }
