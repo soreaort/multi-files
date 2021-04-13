@@ -3,7 +3,8 @@
 
 stage('Get data') {
 //  println getModifiedFiles()
-    print("it works")
+//    print("it works")
+println(currentBuild.changeSets)
     changedFiles = []
     for (changeLogSet in currentBuild.changeSets) {
         for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
