@@ -7,7 +7,7 @@ pipeline {
     stage('Get modified files') {
       steps {
         script {
-          String getChangedFilesList() {
+          def getChangedFilesList() {
             changedFiles = []
             for (changeLogSet in currentBuild.changeSets) {
               for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
