@@ -4,15 +4,13 @@
 stage('Get data') {
 //  println getModifiedFiles()
 //    print("it works")
-@NonCPS
-println(currentBuild.changeSets)
     changedFiles = []
     for (changeLogSet in currentBuild.changeSets) {
         for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
             for (file in entry.getAffectedFiles()) {
-                changedFiles.add(changedFiles.add(file.getPath()))
+                // changedFiles.add(file.getPath())
+                println(file.getPath())
             }
         }
     }
-  print(changedFiles)
 }
