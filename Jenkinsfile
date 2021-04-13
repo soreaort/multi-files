@@ -4,6 +4,7 @@
 stage('Get data') {
 //  println getModifiedFiles()
 //    print("it works")
+@NonCPS
 println(currentBuild.changeSets)
     changedFiles = []
     for (changeLogSet in currentBuild.changeSets) {
