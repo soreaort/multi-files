@@ -2,5 +2,5 @@
 @Library('depa-libraries') _
 
 stage('Get data') {
-  getModifiedFiles()
+  println getModifiedFiles()
 }
