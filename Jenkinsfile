@@ -11,4 +11,5 @@ String getChangedFilesList() {
     return changedFiles
 }
 
-println getChangedFilesList()
+String results = getChangedFilesList()
+println results
