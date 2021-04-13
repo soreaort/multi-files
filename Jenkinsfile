@@ -1,5 +1,5 @@
 #!groovy
-@Library("depa-libraries", changelog=false) _
+@Library(value="depa-libraries", changelog=false) _
 
 node {
   stage('Get data') {
