@@ -1,5 +1,6 @@
 #!groovy
-@Library(value="depa-libraries", changelog=false) _
+// @Library(value="depa-libraries", changelog=false) _
+@Library("depa-libraries") _
 
 pipeline {
 agent any
@@ -7,6 +8,11 @@ stages {
   stage('Clean Up'){
     steps {
       step([$class: 'WsCleanup'])
+    }
+  }
+  stage('Test'){
+    steps {
+      sayHello 'IAMSAUL'
     }
   }
   stage('Get data') {
