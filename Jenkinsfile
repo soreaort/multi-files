@@ -1,6 +1,5 @@
 #!groovy
-// @Library(value="depa-libraries", changelog=false) _
-@Library("depa-libraries") _
+@Library(value="depa-libraries", changelog=false) _
 
 pipeline {
 agent any
@@ -12,7 +11,7 @@ stages {
   }
   stage('Test'){
     steps {
-      sayHello 'IAMSAUL2'
+      sayHello 'Alex3'
     }
   }
   stage('Get data') {
