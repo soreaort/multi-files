@@ -1,7 +1,8 @@
 #!groovy
 @Library(value="depa-libraries", changelog=false) _
 
-node {
+pipeline {
+stages {
   stage('Clean Up'){
     steps {
       step([$class: 'WsCleanup'])
@@ -9,7 +10,8 @@ node {
   }
   stage('Get data') {
     steps {
-      println(getModifiedFiles())
+      println getModifiedFiles
     }
   }
+}
 }
