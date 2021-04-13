@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  triggers {
+    pollSCM('* * * * *')
+   }
   stages {
     stage('Get modified files') {
       steps {
