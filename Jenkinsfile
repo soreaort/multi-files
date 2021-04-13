@@ -12,7 +12,7 @@ stages {
   }
   stage('Test'){
     steps {
-      sayHello 'IAMSAUL'
+      sayHello 'IAMSAUL2'
     }
   }
   stage('Get data') {
