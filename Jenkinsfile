@@ -11,7 +11,7 @@ stages {
   }
   stage('Get data') {
     steps {
-      println getModifiedFiles
+      println getModifiedFiles.toString()
     }
   }
 }
