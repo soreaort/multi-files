@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 // https://github.com/freebsd/freebsd-ci/blob/master/scripts/build/build-test.groovy
 // http://stackoverflow.com/a/40294220
+// https://gist.github.com/ysegorov/a23e7324e264b9afd932bd8b90862305
 
 // https://JENKINS_HOST/scriptApproval/ - for script approval
 

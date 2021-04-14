@@ -1,6 +1,6 @@
 #!groovy
-// @Library(value="depa-libraries", changelog=false) _
-@Library("depa-libraries") _
+@Library(value="depa-libraries", changelog=false) _
+// @Library("depa-libraries") _
 
 node {
   stage('Clean Up'){
@@ -8,11 +8,13 @@ node {
     step([$class: 'WsCleanup'])
   }
   // Mark the code checkout 'stage'
-  stage (name : 'Checkout') {
+  stage ('Checkout') {
       // Get the code from the repository
       checkout scm
   }
-  println(getChangedFiles())
+  stage ('Details') {
+    println(getChangedFiles())
+  }
 }
 
 @NonCPS
