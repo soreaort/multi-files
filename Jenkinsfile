@@ -7,9 +7,7 @@ node {
     step([$class: 'WsCleanup'])
   }
   stage('Show results') {
-    script {
-      getChangedFiles()
-    }
+    getChangedFiles()
   }
 }
 
