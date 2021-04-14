@@ -13,7 +13,8 @@ node {
       checkout scm
   }
   stage ('Details') {
-    echo "${GIT_BRANCH}"
+    echo "${env.GIT_BRANCH}"
+    echo "${env.BRANCH_NAME}"
     for (file in getChangedFiles()){
       awesomePipeline(fileName: file)
     }
