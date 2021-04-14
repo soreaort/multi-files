@@ -13,7 +13,7 @@ node {
       checkout scm
   }
   stage ('Details') {
-    println(GIT_BRANCH)
+    println(env.GIT_BRANCH)
     for (file in getChangedFiles()){
       awesomePipeline(fileName: file)
     }
