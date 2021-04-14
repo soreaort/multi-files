@@ -3,8 +3,8 @@
 
 node {
   stage('Clean Up'){
-    // Clean up workspace
-    deleteDir()
+    // deleteDir()
+    step([$class: 'WsCleanup'])
   }
   stage('Show results') {
     for (changeLogSet in currentBuild.changeSets) {
