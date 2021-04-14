@@ -15,8 +15,8 @@
             for (changeLogSet in currentBuild.changeSets) {
               for (entry in changeLogSet.getItems()) {
                 for (file in entry.getAffectedFiles()) {
-                  // sayHello file.getPath()
-                  sayHello file.getPath().split('.'[1])
+                  println file.getPath()
+                  // sayHello file.getPath().split('.'[1])
                 }
               }
             }
