@@ -2,12 +2,12 @@
 @Library(value="depa-libraries", changelog=false) _
 
 node {
-  stage('Clean Up'){
+//  stage('Clean Up'){
     // deleteDir()
-    step([$class: 'WsCleanup'])
-  }
-  stage('Show results') {
-    script {
+//    step([$class: 'WsCleanup'])
+//  }
+//  stage('Show results') {
+//    script {
       for (changeLogSet in currentBuild.changeSets) {
          for (entry in changeLogSet.getItems()) {
            for (file in entry.getAffectedFiles()) {
@@ -16,6 +16,6 @@ node {
             }
           }
        }
-     }
-  }
+//     }
+//  }
 }
