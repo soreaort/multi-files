@@ -14,7 +14,9 @@ node {
 @NonCPS
 def getChangedFiles() {
   def fileList = []
-  for (changeLogSet in currentBuild.changeSets) {
+//  for (changeLogSet in currentBuild.changeSets) {
+  println(build.currentChangesets)
+  for (changeLogSet in build.currentChangesets) {
     for (entry in changeLogSet.getItems()) {
       for (file in entry.getAffectedFiles()) {
         fileList.add(file.getPath())
