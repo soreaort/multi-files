@@ -2,12 +2,15 @@
 @Library(value="depa-libraries", changelog=false) _
 
 node {
+  stage('Clean Up'){
+    step([$class: 'WsCleanup'])
+  }
   println("Before")
   println(getChangedFiles())
   println("After")
 }
 
-// @NonCPS
+@NonCPS
 def getChangedFiles() {
   def fileList = []
   for (changeLogSet in currentBuild.changeSets) {
