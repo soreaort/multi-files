@@ -15,6 +15,7 @@ node {
   stage ('Details') {
     for (file in getChangedFiles()){
       awesomePipeline(fileName: file)
+      println(fileName: file)
     }
   }
 }
