@@ -8,24 +8,20 @@ node {
   }
   stage('Show results') {
     script {
-    getChangedFiles()
-    println("In the method") 
-      for (changeLogSet in currentBuild.changeSets) {
-         println("FOR ONE") 
-         for (entry in changeLogSet.getItems()) {
-           println("FOR TWO") 
-           for (file in entry.getAffectedFiles()) {
-              println("FOR THREE") 
-              sayHello file.getPath()
-              // sayHello file.getPath().split('.'[1])
-            }
-          }
-       }
-     }
+      getChangedFiles()
+    }
   }
 }
 
 @NonCPS
 def getChangedFiles() {
-   println("From the Function") 
+//  fileList = []
+  for (changeLogSet in currentBuild.changeSets) {
+    for (entry in changeLogSet.getItems()) {
+      for (file in entry.getAffectedFiles()) {
+         sayHello file.getPath()
+       }
+     }
+  }
+//  return fileList
 }
