@@ -19,6 +19,8 @@ node {
   }
 }
 
+// Investigate what is it for
+// @NonCPS
 def getChangedFiles() {
   def fileList = []
   for (changeLogSet in currentBuild.changeSets) {
