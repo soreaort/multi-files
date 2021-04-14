@@ -16,7 +16,7 @@ stages {
               for (entry in changeLogSet.getItems()) {
                 for (file in entry.getAffectedFiles()) {
                   // sayHello file.getPath()
-                  sayHello file.getPath()
+                  sayHello file.getPath().split('.'[1])
                 }
               }
             }
