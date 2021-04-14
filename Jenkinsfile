@@ -1,6 +1,5 @@
 #!groovy
-// @Library(value="depa-libraries", changelog=false) _
-@Library("depa-libraries") _
+@Library(value="depa-libraries", changelog=false) _
 
 node {
   println("Before")
@@ -8,7 +7,7 @@ node {
   println("After")
 }
 
-@NonCPS
+// @NonCPS
 def getChangedFiles() {
   def fileList = []
   for (changeLogSet in currentBuild.changeSets) {
