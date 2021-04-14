@@ -2,9 +2,8 @@
 @Library(value="depa-libraries", changelog=false) _
 
   stage('Clean Up'){
-    steps {
-      step([$class: 'WsCleanup'])
-    }
+    // Clean up workspace
+    deleteDir()
   }
 stage('Get data') {
     for (changeLogSet in currentBuild.changeSets) {
