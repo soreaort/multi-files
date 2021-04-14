@@ -26,8 +26,7 @@ def getChangedFiles() {
   for (changeLogSet in currentBuild.changeSets) {
     for (entry in changeLogSet.getItems()) {
       for (file in entry.getAffectedFiles()) {
-        // fileList.add(file.getPath())
-        fileList.add(file.getMetaClass())
+        fileList.add(file.getPath())
       }
     }
   }
