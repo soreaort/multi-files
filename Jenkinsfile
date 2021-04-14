@@ -18,8 +18,8 @@ stages {
     steps {
       script {
             for (changeLogSet in currentBuild.changeSets) {
+              println changeLogSet.getMethods()
               for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
-                println entry.getMethods()
                 for (file in entry.getAffectedFiles()) {
                   println file.getPath()
                 }
