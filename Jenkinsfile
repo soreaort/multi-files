@@ -1,26 +1,27 @@
 #!groovy
-// @Library(value="depa-libraries", changelog=false) _
-@Library("depa-libraries") _
+@Library(value="depa-libraries", changelog=false) _
 
-node {
+pipeline {
+agent any
+stages {
   stage('Clean Up'){
-    // deleteDir()
-    step([$class: 'WsCleanup'])
+    steps {
+      step([$class: 'WsCleanup'])
+    }
   }
-  stage('Show results') {
-    getChangedFiles()
-  }
-}
-
-@NonCPS
-def getChangedFiles() {
-  def fileList = []
-  for (changeLogSet in currentBuild.changeSets) {
-    for (entry in changeLogSet.getItems()) {
-      for (file in entry.getAffectedFiles()) {
-        fileList.add(file.getPath())
+stage('Get data') {
+    steps {
+      script {
+          for (changeLogSet in currentBuild.changeSets) {
+              for (entry in changeLogSet.getItems()) {
+                for (file in entry.getAffectedFiles()) {
+                  sayHello file.getPath()
+                  // sayHello file.getPath().split('.'[1])
+                }
+              }
+            }
       }
     }
   }
-  return fileList
+}
 }
