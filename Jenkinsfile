@@ -7,7 +7,12 @@ node {
     // deleteDir()
     step([$class: 'WsCleanup'])
   }
-  getChangedFiles()
+  // Mark the code checkout 'stage'
+  stage (name : 'Checkout') {
+      // Get the code from the repository
+      checkout scm
+  }
+  println(getChangedFiles())
 }
 
 @NonCPS
