@@ -13,7 +13,9 @@ node {
       checkout scm
   }
   stage ('Details') {
-    println(getChangedFiles())
+    for (file in getChangedFiles()){
+      awesomePipeline(fileName: file)
+    }
   }
 }
 
