@@ -15,13 +15,13 @@ node {
 
 @NonCPS
 def getChangedFiles() {
-//  fileList = []
+  def fileList = []
   for (changeLogSet in currentBuild.changeSets) {
     for (entry in changeLogSet.getItems()) {
       for (file in entry.getAffectedFiles()) {
-         sayHello file.getPath()
-       }
-     }
+        fileList.add(file.getPath())
+      }
+    }
   }
-//  return fileList
+  return fileList
 }
