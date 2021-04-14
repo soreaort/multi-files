@@ -1,5 +1,5 @@
 #!groovy
-// @Library(value="depa-libraries", changelog=false) _
+@Library(value="depa-libraries", changelog=false) _
 
 //pipeline {
 //agent any
@@ -15,7 +15,7 @@
             for (changeLogSet in currentBuild.changeSets) {
               for (entry in changeLogSet.getItems()) {
                 for (file in entry.getAffectedFiles()) {
-                  println file.getPath()
+                  sayHello file.getPath()
                   // sayHello file.getPath().split('.'[1])
                 }
               }
