@@ -6,7 +6,7 @@ node {
     // Clean up workspace
     deleteDir()
   }
-stage('Get data') {
+  stage('Show results') {
     for (changeLogSet in currentBuild.changeSets) {
        for (entry in changeLogSet.getItems()) {
          for (file in entry.getAffectedFiles()) {
