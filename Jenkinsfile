@@ -1,6 +1,7 @@
 #!groovy
 @Library(value="depa-libraries", changelog=false) _
 
+node {
   stage('Clean Up'){
     // Clean up workspace
     deleteDir()
@@ -15,3 +16,4 @@ stage('Get data') {
         }
      }
   }
+}
