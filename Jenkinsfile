@@ -23,3 +23,8 @@ node {
      }
   }
 }
+
+@NonCPS
+def getChangedFiles() {
+   println("From the Function") 
+}
