@@ -3,7 +3,9 @@
 @Library("depa-libraries") _
 
 node {
-  getChangedFiles()
+  println("Before")
+  println(getChangedFiles())
+  println("After")
 }
 
 @NonCPS
