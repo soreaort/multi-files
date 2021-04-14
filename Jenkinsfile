@@ -7,7 +7,7 @@ node {
     step([$class: 'WsCleanup'])
   }
     stage('test advance script') {
-            echo "current build number: ${currentBuild.getMethods()}"
+            echo "current build number: ${currentBuild.getMetaClass()}"
         }
   stage('Show results') {
     getChangedFiles()
