@@ -9,9 +9,9 @@
 //      step([$class: 'WsCleanup'])
 //    }
 //  }
-//  stage('Get data') {
-//    steps {
-//      script {
+  stage('Get data') {
+    steps {
+      script {
             for (changeLogSet in currentBuild.changeSets) {
               for (entry in changeLogSet.getItems()) {
                 for (file in entry.getAffectedFiles()) {
@@ -20,8 +20,8 @@
                 }
               }
             }
-//      }
-//    }
-//  }
+      }
+    }
+  }
 //}
 //}
