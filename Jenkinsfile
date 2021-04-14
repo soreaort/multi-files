@@ -17,5 +17,8 @@ def getChangedFiles() {
       }
     }
   }
+  if (fileList.size() == 0){
+    fileList.add("Nothing was found")
+  }
   return fileList
 }
