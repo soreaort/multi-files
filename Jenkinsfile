@@ -8,6 +8,7 @@ node {
   }
   stage('Show results') {
     script {
+    getChangedFiles()
     println("In the method") 
       for (changeLogSet in currentBuild.changeSets) {
          println("FOR ONE") 
