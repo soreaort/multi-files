@@ -9,18 +9,14 @@ stages {
       step([$class: 'WsCleanup'])
     }
   }
-  stage('Test'){
-    steps {
-      sayHello 'Alex3'
-    }
-  }
   stage('Get data') {
     steps {
       script {
             for (changeLogSet in currentBuild.changeSets) {
-              for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
+              for (entry in changeLogSet.getItems()) {
                 for (file in entry.getAffectedFiles()) {
-                  sayHello file.getPath()
+                  // sayHello file.getPath()
+                  sayHello file.getPath().getMethods()
                 }
               }
             }
