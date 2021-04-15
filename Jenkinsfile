@@ -14,6 +14,9 @@ node {
       pf = data.contains('/') ? data.split('/').last() : data
       println(pf)
     }
+    if ('new.rb' in rawData){
+      println("Woooowwwwww this is really awesome")
+    }
     for (file in getChangedFiles()){
       // awesomePipeline(fileName: file)
         println(file)
