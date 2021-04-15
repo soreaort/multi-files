@@ -11,7 +11,7 @@ node {
   stage ('Details') {
     rawData = ['onefile.rb','path/to/new/file.lock.json','new.rb','justone/deep.txt']
     for (data in rawData){
-      pf = data.contains('/') ? data.split('/').last() : data
+      pf.add(data.contains('/') ? data.split('/').last() : data)
     }
     println(pf)
     for (file in getChangedFiles()){
