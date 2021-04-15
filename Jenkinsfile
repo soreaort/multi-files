@@ -11,9 +11,10 @@ node {
   stage ('Details') {
     rawData = ['onefile.rb','path/to/new/file.lock.json','new.rb','justone/deep.txt']
     for (data in rawData){
-      if (data.contains('/'){
+      if (data.contains('/')) {
         println(data.split('/').last())
-      } else {
+      } 
+      else {
         println(data)
       }
     }
