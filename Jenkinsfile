@@ -1,20 +1,23 @@
 #!groovy
 @Library(value="depa-libraries", changelog=false) _
-// @Library("depa-libraries") _
 
 node {
   stage('Clean Up'){
-    // deleteDir()
     step([$class: 'WsCleanup'])
   }
-  // Mark the code checkout 'stage'
   stage ('Checkout') {
-      // Get the code from the repository
       checkout scm
   }
   stage ('Details') {
-    echo "${env.GIT_BRANCH}"
-    echo "${env.BRANCH_NAME}"
+    rawData = ['onefile.rb','path/to/new/file.lock.json','new.rb','justone/deep.txt']
+    for (data in rawData){
+      if (data.contains('/'){
+        println(data.split('/').last())
+      } else {
+        println(data)
+      }
+    }
+    print("Modified files: ")
     for (file in getChangedFiles()){
       awesomePipeline(fileName: file)
     }
