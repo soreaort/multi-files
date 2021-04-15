@@ -12,8 +12,8 @@ node {
     rawData = ['onefile.rb','path/to/new/file.lock.json','new.rb','justone/deep.txt']
     for (data in rawData){
       pf = data.contains('/') ? data.split('/').last() : data
-      println(pf)
     }
+    println(pf)
     for (file in getChangedFiles()){
       // awesomePipeline(fileName: file)
         println(file)
